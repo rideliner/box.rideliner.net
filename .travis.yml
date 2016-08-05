@@ -1,0 +1,8 @@
+language: ruby
+cache: false
+before_script: ./_scripts/git-meta-store.rb apply
+rvm: 2.3.0
+script: bundle exec rake ci
+branches:
+  only: master
+sudo: false

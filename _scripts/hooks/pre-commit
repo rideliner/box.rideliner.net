@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+_scripts/git-meta-store.rb store
+
+git add _scripts/git-meta.store.yml

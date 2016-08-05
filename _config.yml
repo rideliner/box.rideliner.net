@@ -1,0 +1,19 @@
+title: Rideliner's Box-o-Things
+email: nathan.currier@gmail.com
+baseurl: ""
+url: "https://box.rideliner.net"
+github_username: rideliner
+
+gems:
+  - autoindex
+
+exclude:
+  - Rakefile
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - .travis.yml
+  - install.sh
+
+markdown: kramdown

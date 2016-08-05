@@ -1,0 +1,11 @@
+---
+exclude:
+  - _scripts/**
+  - Rakefile
+  - Gemfile
+  - .gitconfig
+  - _config.yml
+  - .travis.yml
+  - install.sh
+fields:
+  - :mtime
