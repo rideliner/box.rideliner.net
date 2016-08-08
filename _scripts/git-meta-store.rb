@@ -29,9 +29,9 @@ class MetaDataAccessor
   def set(meta, value)
     case meta
     when :mtime
-      File.utime(nil, value, @filename)
+      File.utime(stat.atime, value, @filename)
     when :atime
-      File.utime(value, nil, @filename)
+      File.utime(value, stat.mtime, @filename)
     when :mode
       File.chmod(value, @filename)
     when :uid
