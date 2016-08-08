@@ -11,10 +11,6 @@ class MetaDataAccessor
     @stat ||= File.stat(@filename)
   end
 
-  def file
-    @file ||= File.new(@filename)
-  end
-
   def get(meta)
     case meta
     when :mtime
@@ -33,15 +29,15 @@ class MetaDataAccessor
   def set(meta, value)
     case meta
     when :mtime
-      file.utime(nil, value)
+      File.utime(nil, value, @filename)
     when :atime
-      file.utime(value, nil)
+      File.utime(value, nil, @filename)
     when :mode
-      file.chmod(value)
+      File.chmod(value, @filename)
     when :uid
-      file.chown(value, nil)
+      File.chown(value, nil, @filename)
     when :gid
-      file.chown(nil, value)
+      File.chown(nil, value, @filename)
     end
   end
 
