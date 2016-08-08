@@ -113,7 +113,7 @@ class GitMetaStore
 
   def excluded?(file)
     @config['exclude'].any? do |glob|
-      File.fnmatch(glob, file)
+      File.fnmatch(glob, file, File::FNM_DOTMATCH | File::FNM_EXTGLOB)
     end
   end
 end
