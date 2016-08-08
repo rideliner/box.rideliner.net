@@ -15,6 +15,8 @@ if ENV['TRAVIS']
 
   desc 'Deploy site to Github Pages'
   GithubPages::DeployTask.new(deploy: :build) do |t|
+    t.source = '_site'
+
     t.init_jekyll
 
     # Don't delete CNAME
