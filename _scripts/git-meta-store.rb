@@ -58,9 +58,9 @@ class GitMetaStore
   end
 
   def initialize
-    @config = self.class.load_file(CONFIG_FILE)
+    @config = self.class.load_file(CONFIG_FILE) rescue { }
     default_config_options
-    @store = self.class.load_file(STORE_FILE)
+    @store = self.class.load_file(STORE_FILE) rescue { }
 
     @metadata = (@config['fields'] & META_DATA_FIELDS).map(&:to_sym)
   end

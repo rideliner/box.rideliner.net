@@ -4,6 +4,7 @@ exclude:
   - Rakefile
   - Gemfile
   - .gitconfig
+  - .gitignore
   - _config.yml
   - .travis.yml
   - install.sh
